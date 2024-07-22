@@ -13,7 +13,7 @@ server.use(express.json());
 server.use(express.urlencoded({ extended: true }))
 server.use(cookieParser()); 
 // server.use(cors({
-//     origin: 'http://localhost:5174/',
+//     origin: 'https://onestop1411.netlify.app/',
 //     credentials :true , 
 // }))
 
