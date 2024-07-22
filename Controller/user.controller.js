@@ -50,10 +50,7 @@ let signup = async (req, res) => {
 
     let token = await tokenGeneration(user);
     let option = { httpOnly: true, secure: true, sameSite: "None" };
-    return res
-
-      .cookie("Token", token, option)
-      .send({ result: true, message: "user created", data: user });
+    return res.cookie("Token", token, option).send({ result: true, message: "user created", data: user });
   } catch (err) {
     return res.send({ result: false, message: err.message });
   }
