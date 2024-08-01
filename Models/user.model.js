@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken"
 
 let {Schema , model } = mongoose;
 
-const Adress = new Schema({
+const Address = new Schema({
     houseNumber : {type : String , deafult : 0 },
     city : {type : String , required : true },
     pincode : {type: Number , required : true }  
@@ -15,7 +15,7 @@ const UserSchema = new Schema({
     email : {type : String , required : true , unique : true },
     password : {type : String , required : true , min: [6 , "password is too short"]},
     phoneNumber: {type : String },
-    address:{type :[Adress] , default : []}
+    address:{type :[Address] , default : []}
 })
 
 UserSchema.pre("save", async function(next){
